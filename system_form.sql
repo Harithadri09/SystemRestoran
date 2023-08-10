@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 07, 2023 at 07:55 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.1.17
+-- Generation Time: Aug 10, 2023 at 04:20 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `login`
+-- Database: `system_form`
 --
 
 -- --------------------------------------------------------
@@ -31,21 +31,22 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
   `email` varchar(128) NOT NULL,
-  `password` varchar(128) NOT NULL
+  `image` varchar(128) NOT NULL,
+  `password` varchar(128) NOT NULL,
+  `role_id` int(11) NOT NULL,
+  `is_active` int(1) NOT NULL,
+  `date_created` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `name`, `email`, `password`) VALUES
-(1, 'yana', 'rusliyana1510@gmail.com', '$2y$10$N9CgNgghCDPNGJms9PW5KOrjXGDEdNXdjzmJS7UvM1CqLjIZIay.O'),
-(2, 'tisya', 'rusliyana6m@gmai.com', '$2y$10$A0c6M8iTh8f1/2iddKi/1OSQ8khWImdfrA9yVIs.sSbmZYf6vh0PK'),
-(3, 'harith', 'harith@gmail.com', '$2y$10$LqNekVph9iRJY4WMWE6ijOth.GgEbgFLFZ9buNY7.wFvTdUArH1j6'),
-(4, 'wafi', 'bocil@gmail.com', '$2y$10$ULY1Tb.69/5ZhPRiMujp6.ffdDMDxzI5wbkx.jVIvsCmEMyIgPhtW'),
-(5, 'arshini', 'arshini12@gmail.com', '$2y$10$2wsUDujPWyPoWVH0K7huiuGxhL.2L/MjeF4qoIAv3UWeS.ySRXBta'),
-(6, 'hello', 'ayed@gmail.com', '$2y$10$ilA5W.ob8eXDg/Troak7J.ZUy6zk5tIvBwOSL4E/KGAB4JLg/wyeK'),
-(7, 'liyana', 'liyana@gmail.com', '$2y$10$.CXByG3SxeBOKJ7w9pBABOkSu1RJRU4..tlE0njQWt5sqCtPiOJhS');
+INSERT INTO `user` (`id`, `name`, `email`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
+(14, 'ahyed kacak', 'adamzack09@gmail.com', 'daus.jpg', '$2y$10$C.2uLf.4MQXEDNAJBHSZ2uMi2BwWHZuMiIAlvPNnpkyOrI9k7gzDW', 1, 1, 1691602633),
+(15, 'harith', 'harithadri@yahoo.com', 'daus.jpg', '$2y$10$KIOyvsd6/roKInzWyNFQZuC9ApAlz4JdL62NkrUc3aG3Qqmfky93W', 2, 1, 1691603385),
+(16, 'happy lemon', 'happylemon@gmail.com', 'daus.jpg', '$2y$10$4WJFW6iXKpzNA3xkyFcWXeDnvPtiFPI02IAL4CG9IIfUjyi4m5Xvu', 2, 1, 1691632425),
+(17, 'ayed gemuk', 'irfanazman113@gmail.com', 'daus.jpg', '$2y$10$nmFcYJpWWP6ROcYAWh8MXe/TpT7jPe1g///LUS925e0knyILjw/5e', 2, 1, 1691632584);
 
 -- --------------------------------------------------------
 
@@ -90,7 +91,7 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `user_role`
